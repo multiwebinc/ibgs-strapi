@@ -1,0 +1,2458 @@
+{
+  "paths": {
+    "/paginas": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Pagina"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Pagina"
+        ],
+        "parameters": [
+          {
+            "name": "_limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of results possible",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "description": "Sort according to a specific field.",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "description": "Skip a specific number of entries (especially useful for pagination)",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "=",
+            "in": "query",
+            "required": false,
+            "description": "Get entries that matches exactly your input",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_ne",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are not equals to something",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lt",
+            "in": "query",
+            "required": false,
+            "description": "Get record that are lower than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are lower than or equal to a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gt",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than  or equal a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_contains",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_containss",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains (case sensitive) a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_in",
+            "in": "query",
+            "required": false,
+            "description": "Get records that matches any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_nin",
+            "in": "query",
+            "required": false,
+            "description": "Get records that doesn't match any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          }
+        ]
+      },
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pagina"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Pagina"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewPagina"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/paginas/count": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Pagina"
+        ],
+        "parameters": []
+      }
+    },
+    "/paginas/{slug}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pagina"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Pagina"
+        ],
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/paginas/{id}": {
+      "put": {
+        "deprecated": false,
+        "description": "Update a record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pagina"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Pagina"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewPagina"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a record",
+        "responses": {
+          "200": {
+            "description": "deletes a single record based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Pagina"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Pagina": {
+        "required": [
+          "id",
+          "titulo",
+          "slug"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "titulo": {
+            "type": "string"
+          },
+          "componentes": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "texto": {
+                      "type": "string"
+                    },
+                    "margenes": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "marginTop",
+                        "marginBottom",
+                        "paddingTop",
+                        "paddingBottom"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "marginTop": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "marginBottom": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "paddingTop": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "paddingBottom": {
+                          "type": "integer",
+                          "default": 0
+                        }
+                      }
+                    },
+                    "fondo": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "fondo"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "fondo": {
+                          "type": "string",
+                          "default": "transparente",
+                          "enum": [
+                            "transparente",
+                            "grisClaro",
+                            "grisOscuro"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "texto",
+                    "margenes",
+                    "fondo"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "cita": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "cita"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "tipo": {
+                      "type": "string",
+                      "default": "Exito",
+                      "enum": [
+                        "Exito",
+                        "Info",
+                        "Peligro",
+                        "Precaucion"
+                      ]
+                    },
+                    "texto": {
+                      "type": "string"
+                    },
+                    "margenes": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "marginTop",
+                        "marginBottom",
+                        "paddingTop",
+                        "paddingBottom"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "marginTop": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "marginBottom": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "paddingTop": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "paddingBottom": {
+                          "type": "integer",
+                          "default": 0
+                        }
+                      }
+                    },
+                    "fondo": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "fondo"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "fondo": {
+                          "type": "string",
+                          "default": "transparente",
+                          "enum": [
+                            "transparente",
+                            "grisClaro",
+                            "grisOscuro"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "tipo",
+                    "texto",
+                    "margenes",
+                    "fondo"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "texto": {
+                      "type": "string"
+                    },
+                    "enlace": {
+                      "type": "string"
+                    },
+                    "tamano": {
+                      "type": "string",
+                      "enum": [
+                        "pequeno",
+                        "mediano",
+                        "grande",
+                        "extraGrande"
+                      ]
+                    },
+                    "tipo": {
+                      "type": "string",
+                      "enum": [
+                        "transparente",
+                        "solido"
+                      ]
+                    },
+                    "color": {
+                      "type": "string",
+                      "enum": [
+                        "grisClaro",
+                        "grisOscuro",
+                        "rojo"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "texto",
+                    "enlace",
+                    "tamano",
+                    "color"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "tipo": {
+                      "type": "string",
+                      "enum": [
+                        "Gris1",
+                        "Gris2",
+                        "Gris3",
+                        "Gris4",
+                        "Rojo"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "tipo": {
+                      "type": "string",
+                      "enum": [
+                        "tipo1",
+                        "tipo2"
+                      ]
+                    },
+                    "infoBoxIndividual": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id",
+                          "titulo",
+                          "texto",
+                          "enlace",
+                          "textoDelBoton"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "titulo": {
+                            "type": "string"
+                          },
+                          "texto": {
+                            "type": "string"
+                          },
+                          "enlace": {
+                            "type": "string"
+                          },
+                          "textoDelBoton": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "PestanaIndividual": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id",
+                          "texto"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "titulo": {
+                            "type": "string"
+                          },
+                          "texto": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "tipo": {
+                      "type": "string",
+                      "enum": [
+                        "Horizontal1",
+                        "Horizontal2",
+                        "Vertical1",
+                        "Vertical2",
+                        "Acordion1",
+                        "Acordion2",
+                        "Palanca1",
+                        "Palanca2"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "tipo"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "tipo": {
+                      "type": "string",
+                      "enum": [
+                        "parallaxVertical",
+                        "parallaxHorizontal",
+                        "imagenIzquierda",
+                        "anchoCompleto"
+                      ]
+                    },
+                    "titulo": {
+                      "type": "string"
+                    },
+                    "texto": {
+                      "type": "string"
+                    },
+                    "enlace": {
+                      "type": "string"
+                    },
+                    "textoDelBoton": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "puntos": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id",
+                          "texto"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "titulo": {
+                            "type": "string"
+                          },
+                          "texto": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "margenes": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "marginTop",
+                        "marginBottom",
+                        "paddingTop",
+                        "paddingBottom"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "marginTop": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "marginBottom": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "paddingTop": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "paddingBottom": {
+                          "type": "integer",
+                          "default": 0
+                        }
+                      }
+                    },
+                    "fondo": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "fondo"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "fondo": {
+                          "type": "string",
+                          "default": "transparente",
+                          "enum": [
+                            "transparente",
+                            "grisClaro",
+                            "grisOscuro"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "puntos",
+                    "margenes",
+                    "fondo"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "margenes": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "marginTop",
+                        "marginBottom",
+                        "paddingTop",
+                        "paddingBottom"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "marginTop": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "marginBottom": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "paddingTop": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "paddingBottom": {
+                          "type": "integer",
+                          "default": 0
+                        }
+                      }
+                    },
+                    "fondo": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "fondo"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "fondo": {
+                          "type": "string",
+                          "default": "transparente",
+                          "enum": [
+                            "transparente",
+                            "grisClaro",
+                            "grisOscuro"
+                          ]
+                        }
+                      }
+                    },
+                    "columnas": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id",
+                          "texto"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "texto": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "minItems": 2
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "margenes",
+                    "fondo",
+                    "columnas"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "textoDeEnlace": {
+                      "type": "string"
+                    },
+                    "className": {
+                      "type": "string"
+                    },
+                    "margenes": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "marginTop",
+                        "marginBottom",
+                        "paddingTop",
+                        "paddingBottom"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "marginTop": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "marginBottom": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "paddingTop": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "paddingBottom": {
+                          "type": "integer",
+                          "default": 0
+                        }
+                      }
+                    },
+                    "fondo": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "fondo"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "fondo": {
+                          "type": "string",
+                          "default": "transparente",
+                          "enum": [
+                            "transparente",
+                            "grisClaro",
+                            "grisOscuro"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "textoDeEnlace",
+                    "margenes",
+                    "fondo"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "apiKey": {
+                      "type": "string"
+                    },
+                    "placeId": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "apiKey",
+                    "placeId"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "HTML": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "HTML"
+                  ]
+                }
+              ]
+            }
+          },
+          "slug": {
+            "type": "uid"
+          },
+          "meta": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "meta.generico",
+                        "meta.robots",
+                        "meta.description"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "nombre": {
+                      "type": "string"
+                    },
+                    "valor": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "nombre",
+                    "valor"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "meta.generico",
+                        "meta.robots",
+                        "meta.description"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "Valor": {
+                      "type": "string",
+                      "enum": [
+                        "follow",
+                        "index",
+                        "nofollow",
+                        "noindex"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "meta.generico",
+                        "meta.robots",
+                        "meta.description"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "Valor": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "Valor"
+                  ]
+                }
+              ]
+            }
+          },
+          "preTitulo": {
+            "type": "string"
+          }
+        }
+      },
+      "NewPagina": {
+        "required": [
+          "titulo",
+          "slug"
+        ],
+        "properties": {
+          "titulo": {
+            "type": "string"
+          },
+          "componentes": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "texto": {
+                      "type": "string"
+                    },
+                    "margenes": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "marginTop",
+                        "marginBottom",
+                        "paddingTop",
+                        "paddingBottom"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "marginTop": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "marginBottom": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "paddingTop": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "paddingBottom": {
+                          "type": "integer",
+                          "default": 0
+                        }
+                      }
+                    },
+                    "fondo": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "fondo"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "fondo": {
+                          "type": "string",
+                          "default": "transparente",
+                          "enum": [
+                            "transparente",
+                            "grisClaro",
+                            "grisOscuro"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "texto",
+                    "margenes",
+                    "fondo"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "cita": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "cita"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "tipo": {
+                      "type": "string",
+                      "default": "Exito",
+                      "enum": [
+                        "Exito",
+                        "Info",
+                        "Peligro",
+                        "Precaucion"
+                      ]
+                    },
+                    "texto": {
+                      "type": "string"
+                    },
+                    "margenes": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "marginTop",
+                        "marginBottom",
+                        "paddingTop",
+                        "paddingBottom"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "marginTop": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "marginBottom": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "paddingTop": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "paddingBottom": {
+                          "type": "integer",
+                          "default": 0
+                        }
+                      }
+                    },
+                    "fondo": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "fondo"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "fondo": {
+                          "type": "string",
+                          "default": "transparente",
+                          "enum": [
+                            "transparente",
+                            "grisClaro",
+                            "grisOscuro"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "tipo",
+                    "texto",
+                    "margenes",
+                    "fondo"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "texto": {
+                      "type": "string"
+                    },
+                    "enlace": {
+                      "type": "string"
+                    },
+                    "tamano": {
+                      "type": "string",
+                      "enum": [
+                        "pequeno",
+                        "mediano",
+                        "grande",
+                        "extraGrande"
+                      ]
+                    },
+                    "tipo": {
+                      "type": "string",
+                      "enum": [
+                        "transparente",
+                        "solido"
+                      ]
+                    },
+                    "color": {
+                      "type": "string",
+                      "enum": [
+                        "grisClaro",
+                        "grisOscuro",
+                        "rojo"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "texto",
+                    "enlace",
+                    "tamano",
+                    "color"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "tipo": {
+                      "type": "string",
+                      "enum": [
+                        "Gris1",
+                        "Gris2",
+                        "Gris3",
+                        "Gris4",
+                        "Rojo"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "tipo": {
+                      "type": "string",
+                      "enum": [
+                        "tipo1",
+                        "tipo2"
+                      ]
+                    },
+                    "infoBoxIndividual": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id",
+                          "titulo",
+                          "texto",
+                          "enlace",
+                          "textoDelBoton"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "titulo": {
+                            "type": "string"
+                          },
+                          "texto": {
+                            "type": "string"
+                          },
+                          "enlace": {
+                            "type": "string"
+                          },
+                          "textoDelBoton": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "PestanaIndividual": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id",
+                          "texto"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "titulo": {
+                            "type": "string"
+                          },
+                          "texto": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "tipo": {
+                      "type": "string",
+                      "enum": [
+                        "Horizontal1",
+                        "Horizontal2",
+                        "Vertical1",
+                        "Vertical2",
+                        "Acordion1",
+                        "Acordion2",
+                        "Palanca1",
+                        "Palanca2"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "tipo"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "tipo": {
+                      "type": "string",
+                      "enum": [
+                        "parallaxVertical",
+                        "parallaxHorizontal",
+                        "imagenIzquierda",
+                        "anchoCompleto"
+                      ]
+                    },
+                    "titulo": {
+                      "type": "string"
+                    },
+                    "texto": {
+                      "type": "string"
+                    },
+                    "enlace": {
+                      "type": "string"
+                    },
+                    "textoDelBoton": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "puntos": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id",
+                          "texto"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "titulo": {
+                            "type": "string"
+                          },
+                          "texto": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "margenes": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "marginTop",
+                        "marginBottom",
+                        "paddingTop",
+                        "paddingBottom"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "marginTop": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "marginBottom": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "paddingTop": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "paddingBottom": {
+                          "type": "integer",
+                          "default": 0
+                        }
+                      }
+                    },
+                    "fondo": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "fondo"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "fondo": {
+                          "type": "string",
+                          "default": "transparente",
+                          "enum": [
+                            "transparente",
+                            "grisClaro",
+                            "grisOscuro"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "puntos",
+                    "margenes",
+                    "fondo"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "margenes": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "marginTop",
+                        "marginBottom",
+                        "paddingTop",
+                        "paddingBottom"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "marginTop": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "marginBottom": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "paddingTop": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "paddingBottom": {
+                          "type": "integer",
+                          "default": 0
+                        }
+                      }
+                    },
+                    "fondo": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "fondo"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "fondo": {
+                          "type": "string",
+                          "default": "transparente",
+                          "enum": [
+                            "transparente",
+                            "grisClaro",
+                            "grisOscuro"
+                          ]
+                        }
+                      }
+                    },
+                    "columnas": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id",
+                          "texto"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "texto": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "minItems": 2
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "margenes",
+                    "fondo",
+                    "columnas"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "textoDeEnlace": {
+                      "type": "string"
+                    },
+                    "className": {
+                      "type": "string"
+                    },
+                    "margenes": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "marginTop",
+                        "marginBottom",
+                        "paddingTop",
+                        "paddingBottom"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "marginTop": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "marginBottom": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "paddingTop": {
+                          "type": "integer",
+                          "default": 0
+                        },
+                        "paddingBottom": {
+                          "type": "integer",
+                          "default": 0
+                        }
+                      }
+                    },
+                    "fondo": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "fondo"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "fondo": {
+                          "type": "string",
+                          "default": "transparente",
+                          "enum": [
+                            "transparente",
+                            "grisClaro",
+                            "grisOscuro"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "textoDeEnlace",
+                    "margenes",
+                    "fondo"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "apiKey": {
+                      "type": "string"
+                    },
+                    "placeId": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "apiKey",
+                    "placeId"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "paginas.texto",
+                        "paginas.cita-biblica",
+                        "paginas.alerta",
+                        "paginas.boton",
+                        "paginas.separadores",
+                        "paginas.info-box",
+                        "paginas.pestana",
+                        "paginas.llamada-a-la-accion",
+                        "paginas.lista-de-puntos",
+                        "paginas.columnas",
+                        "paginas.archivo",
+                        "paginas.mapa",
+                        "paginas.html"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "HTML": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "HTML"
+                  ]
+                }
+              ]
+            }
+          },
+          "slug": {
+            "type": "uid"
+          },
+          "meta": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "meta.generico",
+                        "meta.robots",
+                        "meta.description"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "nombre": {
+                      "type": "string"
+                    },
+                    "valor": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "nombre",
+                    "valor"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "meta.generico",
+                        "meta.robots",
+                        "meta.description"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "Valor": {
+                      "type": "string",
+                      "enum": [
+                        "follow",
+                        "index",
+                        "nofollow",
+                        "noindex"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "meta.generico",
+                        "meta.robots",
+                        "meta.description"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "Valor": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "Valor"
+                  ]
+                }
+              ]
+            }
+          },
+          "preTitulo": {
+            "type": "string"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Pagina"
+    }
+  ]
+}

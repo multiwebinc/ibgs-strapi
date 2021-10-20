@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_paginas_lista_de_puntos",
+  "info": {
+    "name": "ListaDePuntos",
+    "icon": "list-ol",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "puntos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "paginas.punto",
+      "required": true
+    },
+    "margenes": {
+      "type": "component",
+      "repeatable": false,
+      "component": "paginas.margenes",
+      "required": true
+    },
+    "fondo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "paginas.fondo",
+      "required": true
+    }
+  }
+}

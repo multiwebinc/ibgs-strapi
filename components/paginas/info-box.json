@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_paginas_info_boxes",
+  "info": {
+    "name": "InfoBoxGrupo",
+    "icon": "window-restore",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "tipo1",
+        "tipo2"
+      ]
+    },
+    "infoBoxIndividual": {
+      "type": "component",
+      "repeatable": true,
+      "component": "paginas.info-box-individual"
+    }
+  }
+}

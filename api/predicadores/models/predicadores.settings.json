@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "predicadores",
+  "info": {
+    "name": "Predicador",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "biografia": {
+      "type": "richtext"
+    },
+    "sermones": {
+      "via": "predicador",
+      "collection": "sermones"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nombre",
+      "required": true
+    }
+  }
+}

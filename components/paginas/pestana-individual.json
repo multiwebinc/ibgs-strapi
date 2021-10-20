@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_paginas_pestana_individuals",
+  "info": {
+    "name": "PestanaIndividual",
+    "icon": "square",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "texto": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

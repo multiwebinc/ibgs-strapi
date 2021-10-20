@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_paginas_archivos",
+  "info": {
+    "name": "Archivo",
+    "icon": "file-download",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "textoDeEnlace": {
+      "type": "string",
+      "required": true
+    },
+    "className": {
+      "type": "string"
+    },
+    "margenes": {
+      "type": "component",
+      "repeatable": false,
+      "component": "paginas.margenes",
+      "required": true
+    },
+    "fondo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "paginas.fondo",
+      "required": true
+    }
+  }
+}

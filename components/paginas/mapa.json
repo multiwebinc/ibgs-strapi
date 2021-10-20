@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_paginas_mapas",
+  "info": {
+    "name": "Mapa",
+    "icon": "map-marked"
+  },
+  "options": {},
+  "attributes": {
+    "apiKey": {
+      "type": "string",
+      "required": true
+    },
+    "placeId": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

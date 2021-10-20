@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sermones",
+  "info": {
+    "name": "Sermon",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "texto": {
+      "type": "richtext"
+    },
+    "pasajeClave": {
+      "type": "string"
+    },
+    "fechaPublicacion": {
+      "type": "datetime"
+    },
+    "transcripcion": {
+      "type": "text"
+    },
+    "enlaceVideo": {
+      "type": "string"
+    },
+    "categorias": {
+      "collection": "categorias",
+      "via": "sermones",
+      "dominant": true
+    },
+    "predicador": {
+      "via": "sermones",
+      "model": "predicadores"
+    },
+    "serie": {
+      "model": "serie",
+      "via": "sermones"
+    },
+    "Meta": {
+      "type": "dynamiczone",
+      "components": ["meta.generico", "meta.robots", "meta.description"]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titulo"
+    },
+    "descripcionCorta": {
+      "type": "text",
+      "required": false
+    }
+  }
+}

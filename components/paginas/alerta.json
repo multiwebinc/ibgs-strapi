@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_paginas_alertas",
+  "info": {
+    "name": "Alerta",
+    "icon": "exclamation",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "Exito",
+        "Info",
+        "Peligro",
+        "Precaucion"
+      ],
+      "required": true,
+      "default": "Exito"
+    },
+    "texto": {
+      "type": "richtext",
+      "required": true
+    },
+    "margenes": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "paginas.margenes"
+    },
+    "fondo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "paginas.fondo",
+      "required": true
+    }
+  }
+}

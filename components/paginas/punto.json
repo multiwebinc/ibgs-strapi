@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_paginas_puntos",
+  "info": {
+    "name": "Punto",
+    "icon": "dot-circle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "texto": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

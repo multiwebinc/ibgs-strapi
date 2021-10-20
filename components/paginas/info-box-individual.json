@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_paginas_info_box_individuals",
+  "info": {
+    "name": "InfoBoxIndividual",
+    "icon": "window-maximize",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "texto": {
+      "type": "richtext",
+      "required": true
+    },
+    "enlace": {
+      "type": "string",
+      "required": true
+    },
+    "textoDelBoton": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

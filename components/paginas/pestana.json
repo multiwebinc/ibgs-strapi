@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_paginas_pestanas",
+  "info": {
+    "name": "Pestana",
+    "icon": "table",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "PestanaIndividual": {
+      "type": "component",
+      "repeatable": true,
+      "component": "paginas.pestana-individual"
+    },
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "Horizontal1",
+        "Horizontal2",
+        "Vertical1",
+        "Vertical2",
+        "Acordion1",
+        "Acordion2",
+        "Palanca1",
+        "Palanca2"
+      ],
+      "required": true
+    }
+  }
+}

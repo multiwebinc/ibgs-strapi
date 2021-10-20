@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_paginas_fondos",
+  "info": {
+    "name": "Fondo",
+    "icon": "adjust"
+  },
+  "options": {},
+  "attributes": {
+    "fondo": {
+      "type": "enumeration",
+      "enum": [
+        "transparente",
+        "grisClaro",
+        "grisOscuro"
+      ],
+      "default": "transparente",
+      "required": true
+    }
+  }
+}

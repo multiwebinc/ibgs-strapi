@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_paginas_htmls",
+  "info": {
+    "name": "HTML",
+    "icon": "code"
+  },
+  "options": {},
+  "attributes": {
+    "HTML": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

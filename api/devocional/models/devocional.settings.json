@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "devocionales",
+  "info": {
+    "name": "Devocional"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titulo"
+    },
+    "texto": {
+      "type": "richtext",
+      "required": true
+    },
+    "fechaPublicacion": {
+      "type": "date"
+    },
+    "meta": {
+      "type": "dynamiczone",
+      "components": ["meta.generico", "meta.robots", "meta.description"]
+    }
+  }
+}

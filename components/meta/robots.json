@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_meta_robots",
+  "info": {
+    "name": "Robots",
+    "icon": "robot"
+  },
+  "options": {},
+  "attributes": {
+    "Valor": {
+      "type": "enumeration",
+      "enum": [
+        "follow",
+        "index",
+        "nofollow",
+        "noindex"
+      ]
+    }
+  }
+}

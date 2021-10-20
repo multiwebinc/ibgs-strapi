@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_paginas_cita_biblicas",
+  "info": {
+    "name": "Cita bíblica",
+    "icon": "bible",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "cita": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_paginas_separadores",
+  "info": {
+    "name": "Separadores",
+    "icon": "minus",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "Gris1",
+        "Gris2",
+        "Gris3",
+        "Gris4",
+        "Rojo"
+      ]
+    }
+  }
+}

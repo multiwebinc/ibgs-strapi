@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_paginas_margenes",
+  "info": {
+    "name": "Margenes",
+    "icon": "bars"
+  },
+  "options": {},
+  "attributes": {
+    "marginTop": {
+      "type": "integer",
+      "required": true,
+      "default": 0,
+      "max": 5,
+      "min": 0
+    },
+    "marginBottom": {
+      "type": "integer",
+      "default": 0,
+      "required": true,
+      "max": 5,
+      "min": 0
+    },
+    "paddingTop": {
+      "type": "integer",
+      "default": 0,
+      "required": true,
+      "unique": false,
+      "max": 5,
+      "min": 0
+    },
+    "paddingBottom": {
+      "type": "integer",
+      "default": 0,
+      "required": true,
+      "max": 5,
+      "min": 0
+    }
+  }
+}

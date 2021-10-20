@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_meta_descriptions",
+  "info": {
+    "name": "Description",
+    "icon": "braille"
+  },
+  "options": {},
+  "attributes": {
+    "Valor": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

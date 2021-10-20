@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_meta_genericos",
+  "info": {
+    "name": "Generico",
+    "icon": "bolt"
+  },
+  "options": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "valor": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

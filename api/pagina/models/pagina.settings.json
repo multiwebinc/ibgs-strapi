@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "paginas",
+  "info": {
+    "name": "Página",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "componentes": {
+      "type": "dynamiczone",
+      "components": [
+        "paginas.texto",
+        "paginas.cita-biblica",
+        "paginas.alerta",
+        "paginas.boton",
+        "paginas.separadores",
+        "paginas.info-box",
+        "paginas.pestana",
+        "paginas.llamada-a-la-accion",
+        "paginas.lista-de-puntos",
+        "paginas.columnas",
+        "paginas.archivo",
+        "paginas.mapa",
+        "paginas.html"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "required": true,
+      "targetField": "titulo"
+    },
+    "meta": {
+      "type": "dynamiczone",
+      "components": ["meta.generico", "meta.robots", "meta.description"]
+    },
+    "preTitulo": {
+      "type": "string"
+    }
+  }
+}

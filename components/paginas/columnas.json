@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_paginas_columnas",
+  "info": {
+    "name": "Columnas",
+    "icon": "columns",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "margenes": {
+      "type": "component",
+      "repeatable": false,
+      "component": "paginas.margenes",
+      "required": true
+    },
+    "fondo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "paginas.fondo",
+      "required": true
+    },
+    "columnas": {
+      "type": "component",
+      "repeatable": true,
+      "component": "paginas.columna-individual",
+      "required": true,
+      "min": 2
+    }
+  }
+}

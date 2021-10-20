@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_componentes_textos",
+  "info": {
+    "name": "Texto",
+    "icon": "pen-fancy",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "texto": {
+      "type": "richtext",
+      "required": true
+    },
+    "margenes": {
+      "type": "component",
+      "repeatable": false,
+      "component": "paginas.margenes",
+      "required": true
+    },
+    "fondo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "paginas.fondo",
+      "required": true
+    }
+  }
+}

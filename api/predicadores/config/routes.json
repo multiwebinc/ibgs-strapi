@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/predicadores",
+      "handler": "predicadores.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/predicadores/count",
+      "handler": "predicadores.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/predicadores/:id",
+      "handler": "predicadores.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/predicadores",
+      "handler": "predicadores.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/predicadores/:id",
+      "handler": "predicadores.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/predicadores/:id",
+      "handler": "predicadores.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

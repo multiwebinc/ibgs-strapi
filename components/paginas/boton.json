@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_paginas_botons",
+  "info": {
+    "name": "Boton",
+    "icon": "hand-pointer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "texto": {
+      "type": "string",
+      "required": true
+    },
+    "enlace": {
+      "type": "string",
+      "required": true
+    },
+    "tamano": {
+      "type": "enumeration",
+      "enum": [
+        "pequeno",
+        "mediano",
+        "grande",
+        "extraGrande"
+      ],
+      "required": true
+    },
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "transparente",
+        "solido"
+      ]
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "grisClaro",
+        "grisOscuro",
+        "rojo"
+      ],
+      "required": true
+    }
+  }
+}
